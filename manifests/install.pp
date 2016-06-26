@@ -19,14 +19,6 @@ class couchpotato::install() inherits couchpotato::params {
     require  => [ User[$couchpotato::user], Package['git'] ]
   }
 
-  if $::osfamily =~ /^Debian|RedHat/ {
-    file { '/etc/init.d/couchpotato':
-      ensure => present,
-      source => "puppet:///modules/couchpotato/${::osfamily}.init",
-      mode   => '0755',
-    }
-  }
-
   file { $couchpotato::data_dir:
     ensure  => directory,
     mode    => '0755',

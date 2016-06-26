@@ -19,15 +19,6 @@
 # [*manage_user*]
 #   Whether Puppet should manage this user
 #
-# [*address*]
-#   The address CouchPotato should listening on
-#
-# [*port*]
-#   The port number CouchPotato should be running on
-#
-# [*pidfile*]
-#   The pidfile for the CouchPotato process
-#
 # [*repo*]
 #   The upstream git repo from which CouchPotato will be installed
 #
@@ -48,9 +39,6 @@ class couchpotato (
   $user        = $couchpotato::params::user,
   $user_shell  = $couchpotato::params::user_shell,
   $manage_user = $couchpotato::params::manage_user,
-  $address     = $couchpotato::params::address,
-  $port        = $couchpotato::params::port,
-  $pidfile     = $couchpotato::params::pidfile,
   $repo        = $couchpotato::params::repo,
 ) inherits couchpotato::params {
 
